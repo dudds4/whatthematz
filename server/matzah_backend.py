@@ -307,7 +307,6 @@ class BEVENTS(Enum):
 def on_connect():
     print('User connected')
 
-lookup_table = {}
 
 @socket.on('new_user')
 def on_new_user(data):
@@ -333,7 +332,6 @@ def on_new_user(data):
     user_uuid = db.users.insert_one(User(username, 0, avatar)).inserted_id
     str_uid = str(user_uuid)
     data.update({'uid': str_uid})
-    lookup_table.update({clientId: data})
 
     # db.seders.update_one({"_id": sederId}, {"$push": {'members': str_uid}})
     db.hunts.update_one({"_id": huntId}, { "$push": {"participants": str_uid}})  
