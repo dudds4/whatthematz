@@ -28,17 +28,17 @@ function on_new_user(socket, data) {
     socket.join(room);
 
     // generate the user data
-    user_uuid = uuid.v4();
-    avatar_idx = generateRandomInt(0, 10);
+    var user_uuid = uuid.v4();
+    var avatar_idx = generateRandomInt(0, 10);
 
     // TODO: insert user document to database
-    user_document_id = 0;
+    var user_document_id = 0;
 
     // TODO: update hunt
     // db.hunts.update( huntId, push: {participants: user_document_id})
 
     // TODO: add interface for database
-    player_list = generatePlayerList(huntId, null)
+    var player_list = generatePlayerList(huntId, null)
 
     if(player_list == null) {
         return;
@@ -50,6 +50,6 @@ function on_new_user(socket, data) {
         "player_list", 
         {"player_list": player_list}
     );
-};
+}
 
 exports.on_new_user = on_new_user
