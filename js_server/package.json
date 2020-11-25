@@ -4,7 +4,7 @@
   "description": "\"Trying out MERN stack\"",
   "main": "index.js",
   "scripts": {
-    "test": "run_tests"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
   "homepage": "https://github.com/dudds4/whatthematz#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "socket.io": "^3.0.3"
+    "mocha": "^8.2.1",
+    "socket.io": "^3.0.3",
+    "uuid": "^8.3.1"
   }
 }
